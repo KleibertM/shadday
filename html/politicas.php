@@ -15,6 +15,7 @@
  <!--<title>"" politicas</title>-->
 
 </head>
+
 <style>
     body {
       font-family: Arial, sans-serif;
@@ -53,13 +54,13 @@
     }
   </style>
 <body>
-
   <?php include 'navbar.php'; ?>
+
 
   <section class="home">
     <!--===== pagina de politica de pagina de biblias =====-->
     <div class="cont-polit">
-    <h1>Política de privacidad de [Nombre de la página de venta de Biblias]</h1>
+    <h1>Política de privacidad de SHADDAI</h1>
   
   <h2>Información personal recopilada</h2>
   <p>Recopilamos información personal cuando los clientes se registran en nuestra página, realizan una compra o se suscriben a nuestro boletín. Esta información puede incluir:</p>
@@ -86,12 +87,16 @@
   
   <h2>Contacto</h2>
   <p>Si tiene alguna pregunta o inquietud sobre nuestra política de privacidad, no dude en ponerse en contacto con nosotros a través de nuestro sitio web.</p>
-  
+  <div class="main-icons">
+    <i class='bx bxl-facebook'></i>
+    <i class='bx bxl-whatsapp' ></i>
+    <i class='bx bxl-twitter' ></i>
+  </div>
   <p>Fecha de entrada en vigencia: [Fecha]</p>
 
     </div>
 
-    <script src="js/navbar.js"></script>
+    <script src="../js/navbar.js"></script>
 </body>
 
 </html>

@@ -1,18 +1,18 @@
 <?php 
 require_once "../conexion.php";
 
-$Nombre = $_POST['nombre'];
-$Apellido = $_POST['apellido'];
-$Telefono = $_POST['telefono'];
-$Dni = $_POST['dni'];
-$Direccion = $_POST['direccion'];
-$Edad = $_POST['edad'];
-$Sexo = $_POST['sexo'];
-$Correo = $_POST['correo'];
-$User = $_POST['user'];
-$Clave = $_POST['clave'];
+$Nombre = $_GET['nombre'];
+$Apellido = $_GET['apellido'];
+$Telefono = $_GET['telefono'];
+$Dni = $_GET['dni'];
+$Direccion = $_GET['direccion'];
+$Edad = $_GET['edad'];
+$Sexo = $_GET['sexo'];
+$Correo = $_GET['correo'];
+$User = $_GET['user'];
+$Clave = $_GET['clave'];
 
-$stmt = $conexion->prepare("UPDATE cliente SET nombre=:nombre,	apellido= :apellido,	telefono= :telefono,	dni= :dni,	direccion = :direccion,	edad = :edad,	sexo =:sexo,	correo = :correo,	user = :user,	clave = :clave  WHERE codcliente=:codcliente");
+$stmt = $conexion->prepare("UPDATE cliente SET nombre=:nombre,	apellido= :apellido,	telefono= :telefono,	dni= :dni,	direccion = :direccion,	edad = :edad,	sexo = :sexo,	correo = :correo,	user = :user,	clave = :clave, admin = :admin  WHERE codcliente=:codcliente");
 
 $stmt->bindParam(':nombre', $Nombre);
 $stmt->bindParam(':apellido', $Apellido);
@@ -24,8 +24,9 @@ $stmt->bindParam(':sexo', $Sexo);
 $stmt->bindParam(':correo',$Correo);
 $stmt->bindParam(':user', $User);
 $stmt->bindParam(':clave', $Clave);
+$stmt->bindParam(':admin', $Admin);
 
-if($sql->execute()){
+if($stmt->execute()){
     echo "Datos modificados correctamente..";
     header("Location: ../../html/clientes.php");
 exit();

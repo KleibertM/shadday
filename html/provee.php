@@ -12,20 +12,7 @@ $cont = 0;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proveedores</title>
-    <style>
-		table {
-			border-collapse: collapse;
-			width: 100%;
-		}
-		td, th {
-			border: 1px solid blue;
-			text-align: left;
-			padding: 8px;
-		}
-		td {
-			background-color: #dddddd;
-		}
-	</style>
+    <link rel="stylesheet" href="../css/tablas.css">
 </head>
 <body>
 <header>
@@ -39,30 +26,35 @@ $cont = 0;
             </ul>
         </nav>
     </header>
-    <table border="1" >
-        <tr>
-            <td colspan="5" class="table__title">Datos de la Tienda</td>
-        </tr>
-        <tr>
+    <div class="tite-table" > 
+            <h1>Productos en Almacen</h1>
+            <a href="../procesos/provee/addprovee.php">Agregar Proveedor</a>
+            <a href="../procesos/provee/modifipro.php">Modificar Datos</a>
+        </div>
+    <table class="styled-table" >
+       <thead>
+       <tr>
+            <td class="table__header">ID</td>
             <td class="table__header">RUC</td>
             <td class="table__header">Nombre</td>
             <td class="table__header">Teléfono</td>
             <td class="table__header">Dirección</td>
             <td class="table__header">Correo</td>
         </tr>
+       </thead>
         <?php while($row = $stmt->fetch(PDO::FETCH_ASSOC)): ?>
+        <tbody>
         <tr>
+            <td class="table__item"><?php echo $row['idprovee'];?></td>
             <td class="table__item"><?php echo $row['ruc'];?></td>
             <td class="table__item"><?php echo $row['nombre'];?></td>
             <td class="table__item"><?php echo $row['telefon'];?></td>
             <td class="table__item"><?php echo $row['direccion'];?></td>
             <td class="table__item"><?php echo $row['correo'];?></td>
         </tr>
+        </tbody>
         <?php endwhile  ?>
     </table>
-    <a href="../procesos/provee/addprovee.php">Agregar Proveedor</a>
-    <a href="../procesos/provee/modifipro.php">Modificar Datos</a>
-    <a href="../procesos/cerrar.php">Cerrar Seccion</a>
 
 
       <!----===== JS ===== -->

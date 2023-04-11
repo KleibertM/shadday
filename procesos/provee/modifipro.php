@@ -5,31 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modificar Producto</title>
+    <link rel="stylesheet" href="../../css/modif.css">
 </head>
 <body>  
 <div class="container">
     <form action="modifprovee.php" name="modificar" method="GET">
-        <label class="title">ID a Buscar</label><br>
+        <h2 class="title">ID de Proveedor</h2>
         
-        <input type="number" name="idprovee" required=""><br><br>
-        <label class="title">Datos a Remplazar</label><br>
+        <input type="number" name="idprovee" required=""><br>
+        <h2>Datos a Modiicar</h2>
         
-        <label for="ruc">RUC:</label>
-            <input type="number" id="ruc" name="ruc" ><br>
+            <input type="number" id="ruc" name="ruc" placeholder="Ingresa RUC" ><br>
 
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" ><br>
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre" ><br>
 
-            <label for="telefon">Teléfono:</label>
-            <input type="number" id="telefon" name="telefon" ><br>
+            <input type="number" id="telefon" name="telefon" placeholder="N. Telefono" ><br>
 
-            <label for="direccion">Dirección:</label>
-            <input type="text" id="direccion" name="direccion" ><br>
+            <input type="text" id="direccion" name="direccion" placeholder="Direccion" ><br>
 
-            <label for="correo">Correo electrónico:</label>
-            <input type="email" id="correo" name="correo" ><br>
+            <input type="email" id="correo" name="correo" placeholder="Correo Electronico" ><br>
 
-        <input type="submit" name="enviar" value="Remplazar">
+        <input type="submit" name="enviar" class="btn-modif" value="Modificar">
     </form>
     </div> 
 </body>

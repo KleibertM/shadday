@@ -1,11 +1,11 @@
 <?php  
      require_once '../conexion.php';
 
-    $ruc = $_POST['ruc'];
-    $nombre = $_POST['nombre'];
-    $telefon = $_POST['telefon'];
-    $direccion = $_POST['direccion'];
-    $correo = $_POST['correo'];
+    $ruc = $_GET['ruc'];
+    $nombre = $_GET['nombre'];
+    $telefon = $_GET['telefon'];
+    $direccion = $_GET['direccion'];
+    $correo = $_GET['correo'];
     $stmt = $conexion->prepare("UPDATE provee SET (ruc=:ruc nombre=:nombre, telefon=:telefon, direccion=:direccion, correo=:correo) WHERE ideprovee = :ideprovee");
 
     $stmt->bindParam(':ruc', $ruc);

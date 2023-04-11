@@ -60,7 +60,7 @@
   <section class="home">
     <!--===== pagina de soporte de pagina de biblias =====-->
     <div class="cont-soport">
-    <h1>Política de Soporte de [Nombre de la empresa]</h1>
+    <h1>Política de Soporte de SHADDAI</h1>
   
   <div class="conta">
     <h2>Horario de atención</h2>
@@ -82,7 +82,13 @@
     <p>Para obtener más información sobre nuestra política de privacidad, visite nuestra página de Política de Privacidad.</p>
     
     <h2>Contacto</h2>
+    
     <p>Si tiene alguna pregunta o inquietud sobre nuestra política de soporte, no dude en ponerse en contacto con nosotros a través de nuestro sitio web.</p>
+    <div class="main-icons">
+      <i class='bx bxl-facebook'></i>
+      <i class='bx bxl-whatsapp' ></i>
+      <i class='bx bxl-twitter' ></i>
+    </div>
   </div>
 
     </div>

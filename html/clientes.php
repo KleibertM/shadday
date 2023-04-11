@@ -11,37 +11,26 @@ $cont = 0;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Clientes</title>
-    <style>
-		table {
-			border-collapse: collapse;
-			width: 100%;
-		}
-		td, th {
-			border: 1px solid blue;
-			text-align: left;
-			padding: 8px;
-		}
-		td {
-			background-color: #dddddd;
-		}
-	</style>
+    <link rel="stylesheet" href="../css/tablas.css">
 </head>
 <body>
 <header>
         <nav class="main-nav">
             <ul>
                 <li><a href="admin.php">Inicio</a></li>
-                <li><a href="categoria/all.php">Productos</a></li>
+                <li><a href="items.php">Productos</a></li>
                 <li><a href="ventas.php">Ventas</a></li>
                 <li><a href="provee.php">Proveedores</a></li>
                 <li><a href="../procesos/cerrar.php">Cerrar Seccion</a> </li>
             </ul>
         </nav>
     </header>
-    <table border="1" >
-        <tr>
-            <td colspan="11" class="table__title">Clientes</td>
-        </tr>
+    <div class="tite-table" > 
+            <h1>Clientes Registrados</h1>
+            <a href="../procesos/cliente/modifc.php">Modificar Datos</a>
+        </div>
+    <table class="styled-table" >
+        <thead>
         <tr>
             <td class="table__header">Código Cliente</td>
             <td class="table__header">Nombre</td>
@@ -55,7 +44,9 @@ $cont = 0;
             <td class="table__header">Usuario</td>
             <td class="table__header">Admin</td>
         </tr>
+        </thead>
         <?php while($row = $stmt->fetch(PDO::FETCH_ASSOC)): ?>
+        <tbody>
         <tr>
             <td class="table__item"><?php echo $row['codcliente']; ?></td>
             <td class="table__item"><?php echo $row['nombre']; ?></td>
@@ -69,10 +60,9 @@ $cont = 0;
             <td class="table__item"><?php echo $row['user']; ?></td>
             <td class="table__item"><?php echo $row['admin']; ?></td>
         </tr>
+        </tbody>
         <?php endwhile; ?>
     </table>
-    <a href="../procesos/cliente/modifc.php">Modificar Datos</a>
-    <a href="../procesos/cerrar.php">Cerrar Seccion</a>
 
 
       <!----===== JS ===== -->

@@ -9,7 +9,6 @@
     height: 100vh;
   
     font-family: 'Open Sans', sans-serif;
-    min-width: 1200px;
     position: relative;
   }
   .main-logo{
@@ -26,9 +25,11 @@
   }
   .main-header h1{
     font-size: 7rem;
+    color: var(--text-color);
   }
   .main-header h2{
     font-size: 4rem;
+    color: var(--text-color);
   }
   .main-header p{
     font-size: 1.5rem;
@@ -87,6 +88,7 @@
     font-size: 2.5rem;
     margin: 0 10px;
     cursor: pointer;
+    color: var(--text-color);
   }
   
   .main-icons i:hover{
@@ -146,11 +148,13 @@
   .main-section-content{
     display: flex;
     justify-content: space-between;
+    color: var(--text-color);
   }
   
   .main-section-title{
     text-align: center;
     font-size: 48px;
+    color: var(--text-color);
   }
   .main-section-item{
     font-size: 18px;

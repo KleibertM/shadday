@@ -12,20 +12,7 @@ $cont = 0;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inventario Productos</title>
-    <style>
-		table {
-			border-collapse: collapse;
-			width: 100%;
-		}
-		td, th {
-			border: 1px solid blue;
-			text-align: left;
-			padding: 8px;
-		}
-		td {
-			background-color: #dddddd;
-		}
-	</style>
+    <link rel="stylesheet" href="../css/tablas.css">
 </head>
 <body>
     <header>
@@ -39,11 +26,13 @@ $cont = 0;
             </ul>
         </nav>
     </header>
-
-    <table border="1" >
-        <tr>
-            <td colspan="8" class="table__title">Catálogo de Biblias</td>
-        </tr>
+        <div class="tite-table" > 
+            <h1>Productos en Almacen</h1>
+            <a href="../procesos/producto/additem.php">Agregar Producto</a>
+            <a href="../procesos/producto/modif.php">Editar Producto</a>
+        </div>
+    <table class="styled-table">
+        <thead>
         <tr>
             <td class="table__header">Código</td>
             <td class="table__header">Nombre</td>
@@ -53,10 +42,12 @@ $cont = 0;
             <td class="table__header">Fecha</td>
             <td class="table__header">Stock</td>
             <td class="table__header">Precio</td>
-        
-
+            <td></td>
+            <td></td>
         </tr>
+        </thead>
         <?php while($row = $stmt->fetch(PDO::FETCH_ASSOC)): ?>
+        <tbody>
         <tr>
             <td class="table__item"><?php echo $row['coditem'];?></td>
             <td class="table__item"><?php echo $row['nombre'];?></td>
@@ -66,12 +57,14 @@ $cont = 0;
             <td class="table__item"><?php echo $row['fecha'];?></td>
             <td class="table__item"><?php echo $row['stock'];?></td>
             <td class="table__item"><?php echo $row['precio'];?></td>
+            
+            
+            <td ><a href="../procesos/producto/deletitem.php?id=<?php echo $row['coditem'];?>">eliminar</a></td>
         </tr>
+        </tbody>
         <?php endwhile  ?>
     </table>
-    <a href="../procesos/producto/additem.php">Agregar Producto</a>
-    <a href="../procesos/producto/modif.php">Modificar</a>
-    <a href="../procesos/producto/deletitem.php">eliminar Producto</a>>
+    
 
       <!----===== JS ===== -->
       <script src="../js/navbar.js"></script>

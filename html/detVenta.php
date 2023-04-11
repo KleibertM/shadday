@@ -11,21 +11,7 @@ $cont = 0;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalles de Ventas</title>
-    <style>
-		table {
-			border-collapse: collapse;
-			width: 100%;
-		}
-		td, th {
-			border: 1px solid blue;
-			text-align: left;
-			padding: 8px;
-		}
-		td {
-			background-color: #dddddd;
-		}
-	</style>
-
+    <link rel="stylesheet" href="../css/tablas.css">
 </head>
 <body>
     <header>
@@ -36,39 +22,39 @@ $cont = 0;
                 <li><a href="ventas.php">Ventas</a></li>
                 <li><a href="factura.php">Facturas</a></li>
                 <li><a href="clientes.php">Clientes</a></li>
-                <li><a href="provee.php">Proveedores</a></li>
                 <li><a href="../procesos/cerrar.php">Cerrar Seccion</a> </li>
             </ul>
         </nav>
     </header>
-    <table border="1" >
-        <tr>
-            <td colspan="7" class="table__title">Detalles de Ventas</td>
-        </tr>
-        <tr>
-            <td class="table__header">ID Detalle Venta</td>
-            <td class="table__header">ID Venta</td>
-            <td class="table__header">ID Item</td>
-            <td class="table__header">Nombre del Item</td>
-            <td class="table__header">Cantidad</td>
-            <td class="table__header">Precio Unitario</td>
-            <td class="table__header">Importe</td>
-        </tr>
+    <div class="tite-table" > 
+        <h1>DEtalles de las Ventas</h1>
+    </div>
+    <table class="styled-table"  >
+        <thead>
+            <tr>
+                <td class="table__header">ID Detalle Venta</td>
+                <td class="table__header">ID Venta</td>
+                <td class="table__header">ID Item</td>
+                <td class="table__header">Nombre del Item</td>
+                <td class="table__header">Cantidad</td>
+                <td class="table__header">Precio Unitario</td>
+                <td class="table__header">Importe</td>
+            </tr>
+        </thead>
         <?php while($row = $stmt->fetch(PDO::FETCH_ASSOC)): ?>
-        <tr>
-            <td class="table__item"><?php echo $row['idDetVenta']; ?></td>
-            <td class="table__item"><?php echo $row['venta_FK']; ?></td>
-            <td class="table__item"><?php echo $row['item_FK']; ?></td>
-            <td class="table__item"><?php echo $row['nombreItem']; ?></td>
-            <td class="table__item"><?php echo $row['cantidad']; ?></td>
-            <td class="table__item"><?php echo $row['precio']; ?></td>
-            <td class="table__item"><?php echo $row['importe']; ?></td>
-        </tr>
+        <tbody>
+            <tr>
+                <td class="table__item"><?php echo $row['idDetVenta']; ?></td>
+                <td class="table__item"><?php echo $row['venta_FK']; ?></td>
+                <td class="table__item"><?php echo $row['item_FK']; ?></td>
+                <td class="table__item"><?php echo $row['nombreItem']; ?></td>
+                <td class="table__item"><?php echo $row['cantidad']; ?></td>
+                <td class="table__item"><?php echo $row['precio']; ?></td>
+                <td class="table__item"><?php echo $row['importe']; ?></td>
+            </tr>
+        </tbody>
         <?php endwhile; ?>
     </table>
-    <a href="../procesos/cerrar.php">Cerrar Seccion</a>
-
-
       <!----===== JS ===== -->
       <script src="../js/navbar.js"></script>
 </body>

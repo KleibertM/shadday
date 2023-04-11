@@ -5,41 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modificar Producto</title>
+    
+    <link rel="stylesheet" href="../../css/modif.css">
 </head>
 <body>  
 <div class="container">
     <form action="modifitem.php" name="modificar" method="GET">
-        <label class="title">ID a Buscar</label><br>
-        
+        <h2 class="title">ID de Producto</h2>
         <input type="number" name="coditem" required=""><br><br>
-        <label class="title">Datos a Remplazar</label><br>
         
-        <label >Nombre</label><br>
-        <input type="text" name="nombre"><br>
+        <h2>Datos a Modiicar</h2>
         
-        
-        <label for="foto">Foto:</label>
-        <input type="file" id="foto" name="foto" ><br>
+        <input type="text" name="nombre" placeholder="Nombre" ><br>
 
-        <label for="version">Versión:</label>
-        <input type="text" id="version" name="version" ><br>
+        <input type="text" id="version" name="version" placeholder="Version" ><br>
 
-        <label for="categoria">Categoría:</label>
-        <input type="text" id="categoria" name="categoria" ><br>
+        <input type="text" id="categoria" name="categoria" placeholder="Categoria" ><br>
 
-        <label for="editorial">Editorial:</label>
-        <input type="text" id="editorial" name="editorial" ><br>
+        <input type="text" id="editorial" name="editorial" placeholder="Editorial" ><br>
 
-        <label for="fecha">Fecha:</label>
-        <input type="date" id="fecha" name="fecha" ><br>
+        <input type="date" id="fecha" name="fecha" placeholder="Fecha de F." ><br>
 
-        <label for="stock">Stock:</label>
-        <input type="number" id="stock" name="stock" ><br>
+        <input type="number" id="stock" name="stock" placeholder="Stock" ><br>
 
-        <label for="precio">Precio:</label>
-        <input type="number" id="precio" name="precio" ><br>
+        <input type="number" id="precio" name="precio" placeholder="Precio" ><br>
 
-        <input type="submit" name="enviar" value="Remplazar">
+        <input type="submit" name="enviar" class="btn-modif" value="Remplazar">
     </form>
     </div> 
 </body>

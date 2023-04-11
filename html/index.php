@@ -23,7 +23,7 @@
               <span class="main-logo">SHADDAI</span>
               <ul>
                 <li><a href="index.php">Inicio</a></li>
-                <li><a href="books.php">Productos</a></li>
+                <li><a href="categoria/all.php">Productos</a></li>
                 <li><a href="../procesos/login2.php">Registrate</a></li>
                 <li><a href="../procesos/login2.php">Login</a></li>
               </ul>

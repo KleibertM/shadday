@@ -16,20 +16,20 @@
 
   <div class="ctlg" >
   <?php include '../../procesos/conexion.php';
-  $stmt = $conexion->prepare("SELECT categoria, nombre, version, precio,coditem FROM item WHERE categoria = 9001");
+  $stmt = $conexion->prepare("SELECT * FROM item WHERE categoria = 9001");
   $stmt->execute();?>
-  <?php include '../navbar.php'; ?>
+  <?php include 'nav.php'; ?>
     <div class="titulo-cat" >
       <h1 style = "text-align: center;" >Biblias de Damas</h1>
     </div>
     <div class="container" >
     <?php while($row = $stmt->fetch(PDO::FETCH_ASSOC)): ?>
         <div class="box-book" >
-        <img src="../../img/caballeros/bi-crono-d-d.jpg" alt="Libro 1">
+        <img src='<?php echo $row['foto'];?>' alt="<?php echo $row['nombre'];?>">
         <div class="book-info">
             <h3 class="book-title"><?php echo $row['nombre'];?></h3>
             <p class="book-author"><?php echo $row['version'];?></p>
-            <p class="book-price"><?php echo $row['precio'];?></p>
+            <p class="book-price">S/ <?php echo $row['precio'];?></p>
         </div>
         </div>
         <?php endwhile  ?>    

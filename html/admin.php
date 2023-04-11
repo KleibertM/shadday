@@ -32,7 +32,7 @@
             <h2>Edicion Reina Valera<h2>
             <p>Nuevo sitio web para todas las edades, <br> echale un ojo nuestro catalogo y compra </constantemente></p>
             <button type="button">
-                <a href="items.php"></a>
+                <a href="categoria/all.php"></a>
                 Ver
                 <img src="icono/bxs-right-arrow-alt.svg" alt="">
             </button>
