@@ -42,7 +42,6 @@ if (!empty($_POST['additem'])) {
     }
     }
     }
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
