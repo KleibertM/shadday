@@ -1,3 +1,10 @@
+$<?php
+include_once '../conexion.php';
+
+$stmt = $conexion->prepare("SELECT * FROM provee");
+$stmt->execute();
+$cont = 0;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,10 +13,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modificar Producto</title>
     
-    <link rel="stylesheet" href="../../css/modif.css">
+    <link rel="stylesheet" href="../../css/add.css">
 </head>
 <body>  
-<div class="container">
+    <?php 
+    require 'modifitem.php';?>
+<div class="contenedor">
     <form action="modifitem.php" name="modificar" method="GET">
         <h2 class="title">ID de Producto</h2>
         <input type="number" name="coditem" required=""><br><br>
@@ -30,8 +39,11 @@
 
         <input type="number" id="precio" name="precio" placeholder="Precio" ><br>
 
-        <input type="submit" name="enviar" class="btn-modif" value="Remplazar">
+        <div class="btn" >
+            <input type="submit" name="actualizar" value="Remplazar">
+        </div>
     </form>
     </div> 
+
 </body>
 </html>

@@ -1,37 +1,104 @@
 <?php 
 require_once "../conexion.php";
 
-$Nombre = $_GET['nombre'];
-$Apellido = $_GET['apellido'];
-$Telefono = $_GET['telefono'];
-$Dni = $_GET['dni'];
-$Direccion = $_GET['direccion'];
-$Edad = $_GET['edad'];
-$Sexo = $_GET['sexo'];
-$Correo = $_GET['correo'];
-$User = $_GET['user'];
-$Clave = $_GET['clave'];
+if (!empty($_GET['modificar'])) {
 
-$stmt = $conexion->prepare("UPDATE cliente SET nombre=:nombre,	apellido= :apellido,	telefono= :telefono,	dni= :dni,	direccion = :direccion,	edad = :edad,	sexo = :sexo,	correo = :correo,	user = :user,	clave = :clave, admin = :admin  WHERE codcliente=:codcliente");
-
-$stmt->bindParam(':nombre', $Nombre);
-$stmt->bindParam(':apellido', $Apellido);
-$stmt->bindParam(':telefono', $Telefono);
-$stmt->bindParam(':dni', $Dni);
-$stmt->bindParam(':direccion', $Direccion);
-$stmt->bindParam(':edad', $Edad);
-$stmt->bindParam(':sexo', $Sexo);
-$stmt->bindParam(':correo',$Correo);
-$stmt->bindParam(':user', $User);
-$stmt->bindParam(':clave', $Clave);
-$stmt->bindParam(':admin', $Admin);
-
-if($stmt->execute()){
-    echo "Datos modificados correctamente..";
-    header("Location: ../../html/clientes.php");
-exit();
-
-}else{
-    echo "No se pudo modificar el registro..";
-}
+    $codcliente = $_GET['codcliente'];
+    $nombre = isset($_GET['nombre']) ? $_GET['nombre'] : '';
+    $apellido = isset($_GET['apellido']) ? $_GET['apellido'] : '';
+    $telefono = isset($_GET['telefono']) ? $_GET['telefono'] : '';
+    $dni = isset($_GET['dni']) ? $_GET['dni'] : '';
+    $direccion = isset($_GET['direccion']) ? $_GET['direccion'] : '';
+    $edad = isset($_GET['edad']) ? $_GET['edad'] : '';
+    $sexo= isset($_GET['sexo']) ? $_GET['sexo'] : '';
+    $correo = isset($_GET['correo']) ? $_GET['correo'] : '';
+    $user = isset($_GET['user']) ? $_GET['user'] : '';
+    $clave = isset($_GET['clave']) ? $_GET['clave'] : '';
+    
+    $sql = '';
+    
+    if (!empty($nombre)) {
+        $sql .= "nombre=:nombre,";
+    }
+    if (!empty($apellido)) {
+        $sql .= "apellido= :apellido,";
+    }
+    if (!empty($telefono)) {
+        $sql .= "telefono=:telefono,";
+    }
+    if (!empty($dni)) {
+        $sql .= "dni=:dni,";
+    }
+    if (!empty($direccion)) {
+        $sql .= "direccion=:direccion,";
+    }
+    if (!empty($edad)) {
+        $sql .= "edad=:edad,";
+    }
+    if (!empty($sexo)) {
+        $sql .= "sexo=:sexo,";
+    }
+    if (!empty($correo)) {
+        $sql .= "correo=:correo,";
+    }
+    if (!empty($user)) {
+        $sql .= "user=:user,";
+    }
+    if (!empty($clave)) {
+        $sql .= "clave=:clave,";
+    }
+    
+    $sql = rtrim($sql, ',');
+    
+    // Si no se ha ingresado ningún dato para actualizar
+    if (empty($sql)) {
+        echo "<div class='alert alert_info'>No se ha ingresado ningún dato para actualizar.</div>";
+        return;
+    }
+    
+    $sql = $conexion->prepare("UPDATE cliente SET $sql WHERE codcliente=:codcliente");
+    $sql->bindParam(":codcliente", $codcliente);
+    
+    if (!empty($nombre)) {
+        $sql->bindParam(":nombre", $nombre);
+    }
+    if (!empty($apellido)) {
+        $sql->bindParam(":apellido", $apellido);
+    }
+    if (!empty($telefono)) {
+        $sql->bindParam(":telefono", $telefono);
+    }
+    if (!empty($dni)) {
+        $sql->bindParam(":dni", $dni);
+    }
+    if (!empty($direccion)) {
+        $sql->bindParam(":direccion", $direccion);
+    }
+    if (!empty($edad)) {
+        $sql->bindParam(":edad", $edad);
+    }
+    if (!empty($sexo)) {
+        $sql->bindParam(":sexo", $sexo);
+    }
+    if (!empty($correo)) {
+        $sql->bindParam(":correo", $correo);
+    }
+    if (!empty($user)) {
+        $sql->bindParam(":user", $user);
+    }
+    if (!empty($clave)) {
+        $sql->bindParam(":clave", $clave);
+    }
+    
+    if ($sql->execute()) {
+        echo '<p class="alert alert_exitosa">Datos actualizados correctamente.</p>';
+       
+        header('Location: ../../html/clientes.php');
+        
+    } else {
+        echo "<p class='alert alert_error'>No se han podido actualizar los datos.</p>";
+        
+    }
+    
+    }
 ?>

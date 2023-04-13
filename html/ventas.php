@@ -12,24 +12,21 @@ $cont = 0;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ventas</title>
-    <link rel="stylesheet" href="../css/tablas.css">
+    <link rel="stylesheet" href="../css/test.css">
+    <link rel="stylesheet" href="../css/init.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-<header>
-        <nav class="main-nav-venta">
-            <ul>
-                <li><a href="admin.php">Inicio</a></li>
-                <li><a href="items.php">Productos</a></li>
-                <li><a href="detVenta.php">Detalles Ventas</a></li>
-                <li><a href="factura.php">Facturas</a></li>
-                <li><a href="clientes.php">Clientes</a></li>
-                <li><a href="../procesos/cerrar.php">Cerrar Seccion</a> </li>
-            </ul>
-        </nav>
-    </header>
+<?php include 'navadmin.php'; ?>
+  <div  class="main-container">
     <div class="tite-table" > 
-            <h1>Ventas Totales</h1>
-        </div>
+      <h1>Ventas Totales</h1>
+    </div>
+    <div class="edit">
+        <a href="detVenta.php">Detalles de venta</a>
+     </div>
   <table class="styled-table" >
    <thead>
     <tr>
@@ -54,6 +51,7 @@ $cont = 0;
     </tbody>
     <?php endwhile; ?>
   </table>  
+  </div>
 
     <!----===== JS ===== -->
     <script src="../js/navbar.js"></script>

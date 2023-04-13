@@ -1,33 +1,115 @@
 <?php 
 require_once "../conexion.php";
 
-$coditem= $_GET['coditem'];
-$nombre = $_GET['nombre'];
-$version = $_GET['version'];
-$categoria = $_GET['categoria'];
-$editorial = $_GET['editorial'];
-$fecha = $_GET['fecha'];
-$stock = $_GET['stock'];
-$precio = $_GET['precio'];
+if (!empty($_GET['actualizar'])) {
 
-$stmt = $conexion->prepare("UPDATE item SET nombre=:nombre,  version=:version, categoria=:categoria, editorial=:editorial, fecha=:fecha, stock=:stock, precio=:precio WHERE item.coditem = :coditem");
-
-$stmt->bindParam(':coditem', $coditem);
-$stmt->bindParam(':nombre', $nombre);
-$stmt->bindParam(':version', $version);
-$stmt->bindParam(':categoria', $categoria);
-$stmt->bindParam(':editorial', $editorial);
-$stmt->bindParam(':fecha', $fecha);
-$stmt->bindParam(':stock', $stock);
-$stmt->bindParam(':precio', $precio);
-
-if($stmt->execute()){
-
-    echo "Datos modificados correctamente..";
-    header("Location: ../../html/items.php");
-exit();
-
-}else{
-    echo "No se pudo modificar el registro..";
-}
+    $coditem = $_GET['coditem'];
+    $nombre = isset($_GET['nombre']) ? $_GET['nombre'] : '';
+    $version = isset($_GET['version']) ? $_GET['version'] : '';
+    $categoria = isset($_GET['categoria']) ? $_GET['categoria'] : '';
+    $editorial = isset($_GET['editorial']) ? $_GET['editorial'] : '';
+    $fecha = isset($_GET['fecha']) ? $_GET['fecha'] : '';
+    $stock = isset($_GET['stock']) ? $_GET['stock'] : '';
+    $precio= isset($_GET['precio']) ? $_GET['precio'] : '';
+    $descripcion = isset($_GET['descripcion']) ? $_GET['descripcion'] : '';
+    $npag = isset($_GET['npag']) ? $_GET['npag'] : '';
+    $letra= isset($_GET['letra']) ? $_GET['letra'] : '';
+    
+    
+    
+    $sql = '';
+    
+    if (!empty($nombre)) {
+        $sql .= "nombre=:nombre,";
+    }
+    if (!empty($version)) {
+        $sql .= "version= :version,";
+    }
+    if (!empty($categoria)) {
+        $sql .= "categoria=:categoria,";
+    }
+    if (!empty($editorial)) {
+        $sql .= "editorial=:editorial,";
+    }
+    if (!empty($fecha)) {
+        $sql .= "fecha=:fecha,";
+    }
+    if (!empty($stock)) {
+        $sql .= "stock=:stock,";
+    }
+    if (!empty($precio)) {
+        $sql .= "precio=:precio,";
+    }
+    if (!empty($descripcion)) {
+        $sql .= "descripcion=:descripcion,";
+    }
+    if (!empty($descripcion)) {
+        $sql .= "descripcion=:descripcion,";
+    }
+    if (!empty($npag)) {
+        $sql .= "npag=:npag,";
+    }
+    if (!empty($letra)) {
+        $sql .= "letra=:letra,";
+    }
+    
+    
+    
+    
+    $sql = rtrim($sql, ',');
+    
+    // Si no se ha ingresado ningún dato para actualizar
+    if (empty($sql)) {
+        echo "<div class='alert alert_info'>No se ha ingresado ningún dato para actualizar.</div>";
+        return;
+    }
+    
+    $sql = $conexion->prepare("UPDATE item SET $sql WHERE coditem=:coditem");
+    $sql->bindParam(":coditem", $coditem);
+    
+    if (!empty($nombre)) {
+        $sql->bindParam(":nombre", $nombre);
+    }
+    if (!empty($version)) {
+        $sql->bindParam(":version", $version);
+    }
+    if (!empty($categoria)) {
+        $sql->bindParam(":categoria", $categoria);
+    }
+    if (!empty($editorial)) {
+        $sql->bindParam(":editorial", $editorial);
+    }
+    if (!empty($fecha)) {
+        $sql->bindParam(":fecha", $fecha);
+    }
+    if (!empty($stock)) {
+        $sql->bindParam(":stock", $stock);
+    }
+    if (!empty($precio)) {
+        $sql->bindParam(":precio", $precio);
+    }
+    if (!empty($descripcion)) {
+        $sql->bindParam(":descripcion", $descripcion);
+    }
+    if (!empty($npag)) {
+        $sql->bindParam(":npag", $npag);
+    }
+    if (!empty($letra)) {
+        $sql->bindParam(":letra", $letra);
+    }
+    
+    
+    if ($sql->execute()) {
+        echo '<p class="alert alert_exitosa">Datos actualizados correctamente.</p>';
+       
+        header('Location: ../../html/items.php');
+        
+    } else {
+        echo "<p class='alert alert_error'>No se han podido actualizar los datos.</p>";
+        
+    }
+    
+    }
+    
+    ?>
 ?>

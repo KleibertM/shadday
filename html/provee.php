@@ -12,22 +12,19 @@ $cont = 0;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proveedores</title>
-    <link rel="stylesheet" href="../css/tablas.css">
+    <link rel="stylesheet" href="../css/test.css">
+    <link rel="stylesheet" href="../css/init.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-<header>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="admin.php">Inicio</a></li>
-                <li><a href="items.php">Productos</a></li>
-                <li><a href="ventas.php">Ventas</a></li>
-                <li><a href="provee.php">Proveedores</a></li>
-                <li><a href="../procesos/cerrar.php">Cerrar Seccion</a> </li>
-            </ul>
-        </nav>
-    </header>
-    <div class="tite-table" > 
+<?php include 'navadmin.php'; ?>
+    <div class="main-container" >
+        <div class="tite-table" > 
             <h1>Productos en Almacen</h1>
+        </div>
+        <div class="edit" >
             <a href="../procesos/provee/addprovee.php">Agregar Proveedor</a>
             <a href="../procesos/provee/modifipro.php">Modificar Datos</a>
         </div>
@@ -55,6 +52,7 @@ $cont = 0;
         </tbody>
         <?php endwhile  ?>
     </table>
+    </div>
 
 
       <!----===== JS ===== -->

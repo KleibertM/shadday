@@ -1,3 +1,6 @@
+
+
+
 <nav class="sidebar close">
     <header>
         <div class="image-text">
@@ -7,7 +10,7 @@
             </span>
             <div class="text logo-text">
                 <span class="name">Nombre_pagina</span>
-                <span class="profession">nombre_user</span>
+                <span class="profession"> </span>
             </div>
         </div>
         <i class='bx bx-chevron-right toggle'></i>
@@ -20,7 +23,7 @@
             </li>
             <ul class="menu-links">
                 <li class="nav-link">
-                    <a href="../user.php" id="inicio-link">
+                    <a href="all.php" id="inicio-link">
                         <i class='bx bx-home-alt icon'></i>
                         <span class="text nav-text">Inicio</span>
                     </a>
@@ -34,7 +37,6 @@
                                 <i class='bx bxs-chevron-down arrow'></i>
                             </a>
                             <ul class="sub-menu blank">
-                                <li><a class="link_name" href="#">Libros</a></li>
                                 <li><a href="damas.php">Damas</a></li>
                                 <li><a href="men.php">Caballeros</a></li>
                                 <li><a href="niños.php">Niños</a></li>
@@ -42,19 +44,14 @@
                             </ul>
                         </li>
                     </ul>
-                </div>
+                </div> 
                 <li class="nav-link">
-                    <a href="#" id="favoritos-link">
-                        <i class='bx bx-heart icon'></i>
-                        <span class="text nav-text">Favoritos</span>
-                    </a>
-                </li>
-                <li class="nav-link">
-                    <a href="#" id="carrito-link">
+                    <a class="nav-link" data-bs-toggle="modal" data-bs-target="#modal_cart" style="cursor:pointer;" onclick="consultar_carrito();">
                         <i class='bx bx-cart icon'></i>
                         <span class="text nav-text">Carrito</span>
                     </a>
                 </li>
+            
             </ul>
         </div>
         <div class="bottom-content">
@@ -71,7 +68,7 @@
                 </a>
             </li>
             <li class="">
-                <a href="../procesos/cerrar.php">
+                <a href="../../procesos/cerrar.php">
                     <i class='bx bx-log-out icon'></i>
                     <span class="text nav-text">Cerrar sesión</span>
                 </a>

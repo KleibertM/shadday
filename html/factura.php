@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,40 +6,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Factura de compra</title>
-    <link rel="stylesheet" href="../css/tablas.css">
+    <link rel="stylesheet" href="../css/test.css">
+    <link rel="stylesheet" href="../css/init.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
-<body>
-    <?php
-		// Conectar a la base de datos
-        include '../procesos/conexion.php';
-        // Obtener los datos de la venta
-		$stmt = $conexion->prepare ("SELECT venta.idventa(s), detalleventa.venta_FK(s) FROM venta INNER JOIN detalleventa on venta.idventa = detalleventa.venta_FK");
-        
-		// Obtener los datos de los detalles de venta
-		
-    ?>
-<header>
-    <nav class="main-nav-venta">
-        <ul>
-            <li><a href="admin.php">Inicio</a></li>
-            <li><a href="clientes.php">Clientes</a></li>
-            <li><a href="../procesos/cerrar.php">Cerrar Seccion</a> </li>
-        </ul>
-    </nav>
-</header>
-	 <div class="tite-table" > 
+<body><?php
+include '../procesos/conexion.php';
+$stmt = $conexion->prepare("SELECT * FROM detalleventa");
+$stmt->execute();
+?>
+<?php include 'navadmin.php'; ?>
+	 <div class="main-container" >
+     <div class="tite-table" > 
         <h1>Facturas</h1>
     </div>
+     <div class="edit">
+        <a href="detVenta.php">Detalles de venta</a>
+     </div>
 	<table class="styled-table" >
         <thead>
             <tr>
-                <td class="table__header">ID Venta</td>
-                <td class="table__header">ID Detalle Venta</td>
-                <td class="table__header">ID Cliente</td>
-                <td class="table__header">Nombre Cliente</td>
+                <td class="table__header">N. Venta</td>
+                <td class="table__header">N. Det. Venta</td>
+                <td class="table__header">N. Cliente</td>
+                <td class="table__header">Nom.Cliente</td>
                 <td class="table__header">Fecha y Hora</td>
-                <td class="table__header">ID Producto</td>
-                <td class="table__header">Nombre del Producto</td>
+                <td class="table__header">N. Producto</td>
+                <td class="table__header">Nom. Producto</td>
                 <td class="table__header">Cantidad</td>
                 <td class="table__header">Precio Unitario</td>
                 <td class="table__header">Importe</td>
@@ -67,6 +63,7 @@
         </tbody>
         <?php endwhile; ?>
     </table>
+     </div>
 
       <!----===== JS ===== -->
       <script src="../js/navbar.js"></script>

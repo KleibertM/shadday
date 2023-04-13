@@ -44,33 +44,33 @@ if (!empty($_POST['addprovee'])) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proveedor</title>
+    <link rel="stylesheet" href="../../css/add.css">
 </head>
 <body>
-    <div class="contenedor-form" >
-        <h2>Registro Proveedor</h2>
+    <div class="contenedor" >
+        <div class="titulo" >
+            <h2>Registro Proveedor</h2>
+        </div>
         <form action="addprovee.php"  method="POST"  >
-            <label for="ruc">RUC:</label>
-            <input type="number" id="ruc" name="ruc" required><br>
+            <input type="number" id="ruc" name="ruc" placeholder="RUC" required><br>
 
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required><br>
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre / Razon Social" required><br>
 
-            <label for="telefon">Teléfono:</label>
-            <input type="number" id="telefon" name="telefon" required><br>
+            <input type="number" id="telefon" name="telefon" placeholder="Numero Telefonico" required><br>
 
-            <label for="direccion">Dirección:</label>
-            <input type="text" id="direccion" name="direccion" required><br>
+            <input type="text" id="direccion" name="direccion" placeholder="Direccion" required><br>
 
-            <label for="correo">Correo electrónico:</label>
-            <input type="email" id="correo" name="correo" required><br>
+            <input type="email" id="correo" name="correo" placeholder="Correo Electronico" required><br>
 
+            <div class="btn" >
             <input type="submit" name="addprovee" value="Registrar">
+            </div>
         </form>
     </div>
 </body>

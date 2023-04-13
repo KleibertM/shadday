@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modificar Producto</title>
-    <link rel="stylesheet" href="../../css/modif.css">
+    <link rel="stylesheet" href="../../css/add.css">
 </head>
 <body>  
-<div class="container">
+<div class="contenedor">
     <form action="modifprovee.php" name="modificar" method="GET">
         <h2 class="title">ID de Proveedor</h2>
         
@@ -25,7 +25,9 @@
 
             <input type="email" id="correo" name="correo" placeholder="Correo Electronico" ><br>
 
-        <input type="submit" name="enviar" class="btn-modif" value="Modificar">
+            <div  class="btn">
+                <input type="submit" name="modificarpro" value="Modificar">
+            </div>
     </form>
     </div> 
 </body>

@@ -5,10 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modificar Cliente</title>
-    <link rel="stylesheet" href="../../css/modif.css">
+    <link rel="stylesheet" href="../../css/add.css">
 </head>
 <body>  
-<div class="container">
+<?php 
+    require 'modificliente.php';?>
+<div class="contenedor">
     <form action="modificliente.php" name="modificar" method="GET">
         <h2 class="title">ID de Cliente a Modificar</h2>
         <input type="number" name="codcliente" required placeholder="Ingresa el ID" ><br>
@@ -33,7 +35,9 @@
         <h3>Tipo de Usuario</h3> <br>
         <input type="text" name="admin" placeholder="0 = Usuario / 1 = Admin" ><br><br>
 
-        <input type="submit" name="modificar" class="btn-modif" value="Modificar">
+        <div  class="btn" >
+            <input type="submit" name="modificar"value="Modificar">
+        </div>
     </form>
     </div> 
 </body>

@@ -1,8 +1,3 @@
-<?php
-
-session_start();
-
-?>
 
 <nav class="sidebar close">
     <header>
@@ -14,7 +9,7 @@ session_start();
 
             <div class="text logo-text">
                 <span class="name">Nombre_pagina</span>
-                <span class="profession">tttt</span>
+                <span class="profession"></span>
             </div>
         </div>
 
@@ -30,7 +25,7 @@ session_start();
 
             <ul class="menu-links">
                 <li class="nav-link">
-                    <a href="../user.php" id="inicio-link">
+                    <a href="admin.php" id="inicio-link">
                         <i class='bx bx-home-alt icon'></i>
                         <span class="text nav-text">Inicio</span>
                     </a>
@@ -41,11 +36,10 @@ session_start();
                         <li class="iocn-link nav-link">
                             <a  id="libros-link">
                                 <i class='bx bx-book-alt icon'></i>
-                                <span class="text nav-text">Libros</span>
+                                <span class="text nav-text">Catalogo</span>
                                 <i class='bx bxs-chevron-down arrow'></i>
                             </a>
                             <ul class="sub-menu blank">
-                                <li><a class="link_name" href="#">Libros</a></li>
                                 <li><a href="categoria/damas.php">Damas</a></li>
                                 <li><a href="categoria/men.php">Caballeros</a></li>
                                 <li><a href="categoria/niños.php">Niños</a></li>
@@ -58,16 +52,16 @@ session_start();
 
 
                 <li class="nav-link">
-                    <a href="#" id="favoritos-link">
+                    <a href="items.php">
                         <i class='bx bx-heart icon'></i>
-                        <span class="text nav-text">Favoritos</span>
+                        <span class="text nav-text">Productos</span>
                     </a>
                 </li>
 
                 <li class="nav-link">
-                    <a href="#" id="carrito-link">
+                    <a href="ventas.php">
                         <i class='bx bx-cart icon'></i>
-                        <span class="text nav-text">Carrito</span>
+                        <span class="text nav-text">Ventas</span>
                     </a>
                 </li>
 
@@ -77,16 +71,16 @@ session_start();
         <div class="bottom-content">
 
             <li class="">
-                <a href="soporte.php">
+                <a href="clientes.php">
                     <i class='bx bx-help-circle icon'></i>
-                    <span class="text nav-text">Soporte</span>
+                    <span class="text nav-text">Clientes</span>
                 </a>
             </li>
 
             <li class="">
-                <a href="politicas.php">
+                <a href="provee.php">
                     <i class='bx bx-detail icon'></i>
-                    <span class="text nav-text">Politicas</span>
+                    <span class="text nav-text">Proveedores</span>
                 </a>
             </li>
 
