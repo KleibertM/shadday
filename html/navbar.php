@@ -13,8 +13,8 @@ session_start();
             </span>
 
             <div class="text logo-text">
-                <span class="name">Nombre_pagina</span>
-                <span class="profession">tttt</span>
+            <span class="name">Shadday</span>
+                <span class="profession">Bienvenido <?php echo $_SESSION['user']; ?></span>
             </div>
         </div>
 
@@ -22,10 +22,10 @@ session_start();
     </header>
     <div class="menu-bar">
         <div class="menu">
-        <form id="search-form" class="search-box">
+        <li id="search-form" class="search-box">
             <i class='bx bx-search icon'></i>
             <input id="search-input" type="text" placeholder="Search...">
-        </form>
+        </li>
 
             <ul class="menu-links">
                 <li class="nav-link">
@@ -61,7 +61,7 @@ session_start();
                 </li>
 
                 <li class="nav-link">
-                    <a href="#" id="carrito-link">
+                    <a href="categoria/carrito/VerCarta.php" id="carrito-link">
                         <i class='bx bx-cart icon'></i>
                         <span class="text nav-text">Carrito</span>
                     </a>

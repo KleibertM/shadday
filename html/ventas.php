@@ -33,8 +33,6 @@ $cont = 0;
         <td class="table__header">ID Venta</td>
         <td class="table__header">ID Cliente</td>
         <td class="table__header">Fecha y Hora</td>
-        <td class="table__header">Subtotal</td>
-        <td class="table__header">IGV</td>
         <td class="table__header">Total</td>
       </tr>
    </thead>
@@ -44,8 +42,6 @@ $cont = 0;
         <td class="table__item"><?php echo $row['idventa']; ?></td>
         <td class="table__item"><?php echo $row['idcliente']; ?></td>
         <td class="table__item"><?php echo $row['fecha_hora']; ?></td>
-        <td class="table__item"><?php echo $row['subtotal']; ?></td>
-        <td class="table__item"><?php echo $row['igv']; ?></td>
         <td class="table__item"><?php echo $row['total']; ?></td>
       </tr>
     </tbody>

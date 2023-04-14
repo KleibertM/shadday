@@ -74,8 +74,9 @@ $cart = new Cart;
                         ?>
                                 <tr>
                                     <td><?php echo $item["nombre"]; ?></td>
-                                    <td><?php echo '$' . $item["precio"] . ' COP'; ?></td>
+                                    <td><?php echo 'S/ ' . $item["precio"] . ' Soles'; ?></td>
                                     <td><input type="number" class="form-control text-center" value="<?php echo $item["cantidad"]; ?>" onchange="updateCartItem(this, '<?php echo $item["rowid"]; ?>')" ></td>
+                                    <td><?php echo 'S/ ' . $item["subtotal"] . ' Soles'; ?></td>
                                     <td>
                                         <a href="AccionCarta.php?action=removeCartItem&coditem=<?php echo $item["rowid"]; ?>" class="btn btn-danger" onclick="return confirm('Confirma eliminar?')"><i class="glyphicon glyphicon-trash"></i></a>
                                     </td>
@@ -93,7 +94,7 @@ $cart = new Cart;
                             <td><a href="../all.php" class="btn btn-warning"><i class="glyphicon glyphicon-menu-left"></i> Volver a la tienda</a></td>
                             <td colspan="2"></td>
                             <?php if ($cart->total_items() > 0) { ?>
-                                <td class="text-center"><strong>Total <?php echo '$' . $cart->total() . ' COP'; ?></strong></td>
+                                <td class="text-center"><strong>Total <?php echo 'S/ ' . $cart->total() . ' .'; ?></strong></td>
                                 <td><a href="Pagos.php" class="btn btn-success btn-block">Pagos <i class="glyphicon glyphicon-menu-right"></i></a></td>
                             <?php } ?>
                         </tr>

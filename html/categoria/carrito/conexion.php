@@ -9,8 +9,8 @@ $pass = '';
 $db = new mysqli($host, $user, $pass, $dbname);
 
 // Verificar si la conexión fue exitosa
-if ($conn->connect_error) {
-    die("Error al conectar con la base de datos: " . $conn->connect_error);
+if ($db->connect_error) {
+    die("Error al conectar con la base de datos: " . $db->connect_error);
 }
 
 ?>

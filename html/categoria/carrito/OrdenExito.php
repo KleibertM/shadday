@@ -29,8 +29,7 @@ if (!isset($_REQUEST['coditem'])) {
       <div class="panel-heading">
 
         <ul class="nav nav-pills">
-          <li role="presentation" class="active"><a href="index.php">Volver</a></li>
-          <li role="presentation"><a href="https://www.configuroweb.com/46-aplicaciones-gratuitas-en-php-python-y-javascript/#Aplicaciones-gratuitas-en-PHP,-Python-y-Javascript">ConfiguroWeb</a></li>
+          <li role="presentation" class="active"><a href="Pagos.php">Volver</a></li>
         </ul>
       </div>
 
@@ -39,7 +38,7 @@ if (!isset($_REQUEST['coditem'])) {
         <h1>Estado de tu Requerimiento</h1>
         <p>La Orden se ha enviado exitósamente. El ID de tu pedido es <?php echo $_GET['coditem']; ?></p>
       </div>
-      <div class="panel-footer">Para más desarrollos ingresa en <a href"https://www.configuroweb.com/46-aplicaciones-gratuitas-en-php-python-y-javascript/#Aplicaciones-gratuitas-en-PHP,-Python-y-Javascript">ConfiguroWeb</a></div>
+      
     </div>
     <!--Panek cierra-->
   </div>

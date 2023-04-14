@@ -8,7 +8,7 @@
   flex-wrap: wrap;
   justify-content: center;
   overflow: hidden;
-  gap: 10px;
+  gap: 15px;
   padding: 20px;
   font-family: 'Times New Roman', Times, serif, 'Times New Roman', Times, serif;
   
@@ -19,7 +19,6 @@
 }
 
 .container .box-book {
-  position: absolute;
   width: 275px;
   height: auto;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
@@ -28,6 +27,8 @@
   transition: all 0.2s ease-in-out;
   float: left;
   background-color: var(--sidebar-color);
+  
+  border-radius: 15px;
 }
 
 .container .box-book:hover {
@@ -37,13 +38,15 @@
 
 .container .box-book img {
   width: 250px;
-  margin-top: 5px;
-  border-radius: 5px;
+  margin-top: 10px;
+  border-radius: 10px;
+  justify-content: center;
 }
 
 .book-info {
   padding: 10px;
   color: var(--text-color);
+
 }
 
 h3,
@@ -65,6 +68,22 @@ p {
   font-size: 16px;
   color: #008000;
   font-weight: bold;
+}
+
+.btn-buy {
+  background-color: #004680 !important;
+  margin-bottom: 10px !important;
+  border-radius: 10px;
+  text-transform: uppercase;
+  margin: 0 10px;
+}
+
+.btn-buy .a-buy {
+  text-decoration: none;
+  color: #fff;
+}
+.btn-buy:hover {
+  background-color: #5bd85b !important;
 }
 
 #libro-details {

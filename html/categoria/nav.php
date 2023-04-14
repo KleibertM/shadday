@@ -1,3 +1,8 @@
+<?php
+
+session_start();
+
+?>
 <nav class="sidebar close">
     <header>
         <div class="image-text">
@@ -6,18 +11,18 @@
                     alt="">
             </span>
             <div class="text logo-text">
-                <span class="name">Nombre_pagina</span>
-                <span class="profession">nombre_user</span>
+                <span class="name">Shadday</span>
+                <span class="profession">Hola <?php echo $_SESSION['user']; ?></span>
             </div>
         </div>
         <i class='bx bx-chevron-right toggle'></i>
     </header>
     <div class="menu-bar">
         <div class="menu">
-        <form id="search-form" class="search-box">
+        <li id="search-form" class="search-box">
             <i class='bx bx-search icon'></i>
             <input id="search-input" type="text" placeholder="Search...">
-        </form>
+        </li>
             <ul class="menu-links">
                 <li class="nav-link">
                     <a href="../user.php" id="inicio-link">

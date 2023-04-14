@@ -1,7 +1,7 @@
 <?php
 include '../procesos/conexion.php';
 
-$stmt = $conexion->prepare("SELECT * FROM detalleventa");
+$stmt = $conexion->prepare("SELECT * FROM detalleventa INNER JOIN item ON nombre = item.nombre");
 $stmt->execute();
 $cont = 0;
 ?>
@@ -36,6 +36,7 @@ $cont = 0;
                 <td class="table__header">ID Item</td>
                 <td class="table__header">Nombre del Item</td>
                 <td class="table__header">Cantidad</td>
+                <td class="table__header">Precio Unidad</td>
             </tr>
         </thead>
         <?php while($row = $stmt->fetch(PDO::FETCH_ASSOC)): ?>
@@ -44,8 +45,9 @@ $cont = 0;
                 <td class="table__item"><?php echo $row['idDetVenta']; ?></td>
                 <td class="table__item"><?php echo $row['venta_FK']; ?></td>
                 <td class="table__item"><?php echo $row['item_FK']; ?></td>
-                <td class="table__item"><?php echo $row['nombreItem']; ?></td>
+                <td class="table__item"><?php echo $row['nombre']; ?></td>
                 <td class="table__item"><?php echo $row['cantidad']; ?></td>
+                <td class="table__item"><?php echo $row['precio']; ?></td>
             </tr>
         </tbody>
         <?php endwhile; ?>
@@ -53,5 +55,5 @@ $cont = 0;
    </div>
       <!----===== JS ===== -->
       <script src="../js/navbar.js"></script>
-</body>
+</body>|
 </html>

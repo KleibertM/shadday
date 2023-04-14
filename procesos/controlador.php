@@ -17,8 +17,11 @@ if (!empty($_POST['iniciar_sesion'])) {
         if ($datos) {
             $_SESSION['cliente'] = $datos;
             if ($datos->admin == 1) {
+                $_SESSION['user'] = $User;
                 header('Location: ../html/admin.php');
             } else {
+                session_start();
+                $_SESSION['user'] = $User;
                 header('Location: ../html/user.php');
             }
         } else {

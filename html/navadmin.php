@@ -1,4 +1,8 @@
+<?php
 
+session_start();
+
+?>
 <nav class="sidebar close">
     <header>
         <div class="image-text">
@@ -8,8 +12,8 @@
             </span>
 
             <div class="text logo-text">
-                <span class="name">Nombre_pagina</span>
-                <span class="profession"></span>
+                <span class="name">Shadday</span>
+                <span class="profession">Bienvenido <?php echo $_SESSION['user']; ?></span>
             </div>
         </div>
 

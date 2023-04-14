@@ -41,7 +41,7 @@ $pdo = null;
         </nav>
         <div class="ctlg">
             <div class="titulo-cat">
-                <h1 style="text-align: center;">Conociemientos de Dios</h1>
+                <h1 style="text-align: center;">Diseños de Damas</h1>
             </div>
             <div class="container">
                 <?php foreach ($items as $item) : ?>
@@ -51,6 +51,9 @@ $pdo = null;
                             <h3 class="book-title"><?php echo $item['nombre']; ?></h3>
                             <p class="book-author"><?php echo $item['version']; ?></p>
                             <p class="book-price">S/ <?php echo $item['precio']; ?></p>
+                        </div>
+                        <div class="btn-buy">
+                            <a class="a-buy" href="carrito/AccionCarta.php?action=addToCart&coditem=<?php echo $item["coditem"]; ?>">comprar</a>
                         </div>
                     </div>
                 <?php endforeach; ?>
@@ -79,11 +82,11 @@ $pdo = null;
           contenido.innerHTML = `
           <h4>${data.nombre}</h4>
             <img src="${data.foto}" alt="${data.nombre}">
-            <p>Version: ${data.version}</p>
-            <p>Letra: ${data.letra}</p>
-            <p>N. Paginas: ${data.npag}</p>
-            <p>Descripción: ${data.descripcion}</p>
-            <p>Género:<b> S/ ${data.precio}</B></p>
+            <p><b>Version: </b>${data.version}</p>
+            <p><b>Letra:</b> ${data.letra}</p>
+            <p><b>N. Paginas:</b> ${data.npag}</p>
+            <p><b>Descripción:</b> ${data.descripcion}</p>
+            <p>Precio:<b> S/ ${data.precio}</b></p>
           `;
           itemDetails.classList.add('active');
         });

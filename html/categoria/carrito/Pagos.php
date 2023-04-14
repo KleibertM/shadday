@@ -8,7 +8,7 @@ $cart = new Cart;
 
 // redirect to home if cart is empty
 if ($cart->total_items() <= 0) {
-    header("Location: index.php");
+    echo '';
 }
 
 // set customer ID in session
@@ -60,10 +60,10 @@ $custRow = $query->fetch_assoc();
             <div class="panel-heading">
 
                 <ul class="nav nav-pills">
-                    <li role="presentation"><a href="index.php">Inicio</a></li>
+                    <li role="presentation"><a href="VerCarta.php">Atras</a></li>
                     <li role="presentation"><a href="VerCarta.php">Carrito de Compras</a></li>
                     <li role="presentation" class="active"><a href="Pagos.php">Pagar</a></li>
-                    <li role="presentation"><a href="https://www.configuroweb.com/46-aplicaciones-gratuitas-en-php-python-y-javascript/#Aplicaciones-gratuitas-en-PHP,-Python-y-Javascript">ConfiguroWeb</a></li>
+                    
                 </ul>
             </div>
 
@@ -87,9 +87,9 @@ $custRow = $query->fetch_assoc();
                         ?>
                                 <tr>
                                     <td><?php echo $item["nombre"]; ?></td>
-                                    <td><?php echo '$' . $item["precio"] . ' COP'; ?></td>
+                                    <td><?php echo 'S/ ' . $item["precio"] . ' Soles'; ?></td>
                                     <td><?php echo $item["cantidad"]; ?></td>
-                                    <td><?php echo '$' . $item["subtotal"] . ' COP'; ?></td>
+                                    <td><?php echo 'S/ ' . $item["subtotal"] . ' Soles'; ?></td>
                                 </tr>
                             <?php }
                         } else { ?>
@@ -103,24 +103,24 @@ $custRow = $query->fetch_assoc();
                         <tr>
                             <td colspan="3"></td>
                             <?php if ($cart->total_items() > 0) { ?>
-                                <td class="text-center"><strong>Total <?php echo '$' . $cart->total() . ' COP'; ?></strong></td>
+                                <td class="text-center"><strong>Total <?php echo 'S/ ' . $cart->total() . ' .'; ?></strong></td>
                             <?php } ?>
                         </tr>
                     </tfoot>
                 </table>
                 <div class="shipAddr">
                     <h4>Detalles de envío</h4>
-                    <p><?php echo $custRow['nombre']; ?></p>
-                    <p><?php echo $custRow['correo']; ?></p>
-                    <p><?php echo $custRow['telefono']; ?></p>
-                    <p><?php echo $custRow['direccion']; ?></p>
+                    <p> <b>Nombre: </b> <?php echo $custRow['nombre']; ?></p>
+                    <p> <b>Email: </b> <?php echo $custRow['correo']; ?></p>
+                    <p> <b>Telefono: </b> <?php echo $custRow['telefono']; ?></p>
+                    <p> <b>Direccion: </b> <?php echo $custRow['direccion']; ?></p>
                 </div>
                 <div class="footBtn">
-                    <a href="index.php" class="btn btn-warning"><i class="glyphicon glyphicon-menu-left"></i> Continue Comprando</a>
+                    <a href="../all.php" class="btn btn-warning"><i class="glyphicon glyphicon-menu-left"></i> Continue Comprando</a>
                     <a href="AccionCarta.php?action=placeOrder" class="btn btn-success orderBtn">Realizar pedido <i class="glyphicon glyphicon-menu-right"></i></a>
                 </div>
             </div>
-            <div class="panel-footer">Para más desarrollos ingresa en <a href"https://www.configuroweb.com/46-aplicaciones-gratuitas-en-php-python-y-javascript/#Aplicaciones-gratuitas-en-PHP,-Python-y-Javascript">ConfiguroWeb</a></div>
+            <div 
         </div>
         <!--Panek cierra-->
     </div>

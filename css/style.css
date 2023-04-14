@@ -394,3 +394,8 @@ body.dark .sub-menu li a:hover {
     background-color: var(--sidebar-color);
     color: #fff;
 }
+
+form .search-box input {
+    width: auto !important;
+    height: 30px !important;
+}
