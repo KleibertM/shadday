@@ -36,8 +36,6 @@ $cont = 0;
                 <td class="table__header">ID Item</td>
                 <td class="table__header">Nombre del Item</td>
                 <td class="table__header">Cantidad</td>
-                <td class="table__header">Precio Unitario</td>
-                <td class="table__header">Importe</td>
             </tr>
         </thead>
         <?php while($row = $stmt->fetch(PDO::FETCH_ASSOC)): ?>
@@ -48,8 +46,6 @@ $cont = 0;
                 <td class="table__item"><?php echo $row['item_FK']; ?></td>
                 <td class="table__item"><?php echo $row['nombreItem']; ?></td>
                 <td class="table__item"><?php echo $row['cantidad']; ?></td>
-                <td class="table__item"><?php echo $row['precio']; ?></td>
-                <td class="table__item"><?php echo $row['importe']; ?></td>
             </tr>
         </tbody>
         <?php endwhile; ?>

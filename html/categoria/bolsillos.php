@@ -63,36 +63,54 @@ $pdo = null;
     </div>
 
     <script>
-        const itemList = document.querySelectorAll('.box-book');
-        const itemDetails = document.querySelector('#libro-details');
-        const contenido = document.querySelector('.contenido');
-        const closeButton = document.querySelector('.cerrar');
+  const itemList = document.querySelectorAll('.box-book');
+  const itemDetails = document.querySelector('#libro-details');
+  const contenido = document.querySelector('.contenido');
+  const closeButton = document.querySelector('.cerrar');
+  const searchForm = document.querySelector('#search-form');
+  const searchInput = document.querySelector('#search-input');
 
-        itemList.forEach((item) => {
-            item.addEventListener('click', (e) => {
-                const itemId = e.target.closest('.box-book').dataset.id;
-                fetch(`jestt.php?coditem=${itemId}`)
-                    .then(response => response.json())
-                    .then(data => {
-                        contenido.innerHTML = `
-                        <h4>${data.nombre}</h4>
-                        <img src="${data.foto}" alt="${data.nombre}">
-                        <p>Version: ${data.version}</p>
-                        <p>Editorial: ${data.editorial}</p>
-                        <p>N. Paginas: ${data.npag}</p>
-                        <p>Tipo de Letra: ${data.letra}</p>
-                        <p>Descripción: ${data.descripcion}</p>
-                        <p>Precio: <b> S/ ${data.precio} <b></p>
-                    `;
-                        itemDetails.classList.add('active');
-                    });
-            });
+  itemList.forEach((item) => {
+    item.addEventListener('click', (e) => {
+      const itemId = e.target.closest('.box-book').dataset.id;
+      fetch(`jestt.php?coditem=${itemId}`)
+        .then(response => response.json())
+        .then(data => {
+          contenido.innerHTML = `
+          <h4>${data.nombre}</h4>
+            <img src="${data.foto}" alt="${data.nombre}">
+            <p>Version: ${data.version}</p>
+            <p>Letra: ${data.letra}</p>
+            <p>N. Paginas: ${data.npag}</p>
+            <p>Descripción: ${data.descripcion}</p>
+            <p>Género:<b> S/ ${data.precio}</B></p>
+          `;
+          itemDetails.classList.add('active');
         });
+    });
+  });
 
-        closeButton.addEventListener('click', () => {
-            itemDetails.classList.remove('active');
-        });
-    </script>
+  closeButton.addEventListener('click', () => {
+    itemDetails.classList.remove('active');
+  });
+
+  searchForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const searchTerm = searchInput.value.toLowerCase();
+  itemList.forEach((item) => {
+    const bookTitle = item.querySelector('.book-title').textContent.toLowerCase();
+    const bookAuthor = item.querySelector('.book-author').textContent.toLowerCase();
+    const bookPrice = item.querySelector('.book-price').textContent.toLowerCase();
+    if (bookTitle.includes(searchTerm) || bookAuthor.includes(searchTerm) || bookPrice.includes(searchTerm)) {
+      item.style.display = 'block';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+});
+
+</script>
+
     <script>
         fetch(`jestt.php?coditem=${item['coditem']}`)
     </script>

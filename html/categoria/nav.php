@@ -15,9 +15,9 @@
     <div class="menu-bar">
         <div class="menu">
         <form id="search-form" class="search-box">
-                <i class='bx bx-search icon'></i>
-                <input id="search-input" type="text" placeholder="Search...">
-</form>
+            <i class='bx bx-search icon'></i>
+            <input id="search-input" type="text" placeholder="Search...">
+        </form>
             <ul class="menu-links">
                 <li class="nav-link">
                     <a href="../user.php" id="inicio-link">
@@ -50,7 +50,7 @@
                     </a>
                 </li>
                 <li class="nav-link">
-                    <a href="#" id="carrito-link">
+                    <a href="carrito/VerCarta.php" id="carrito-link">
                         <i class='bx bx-cart icon'></i>
                         <span class="text nav-text">Carrito</span>
                     </a>
@@ -71,7 +71,7 @@
                 </a>
             </li>
             <li class="">
-                <a href="../procesos/cerrar.php">
+                <a href="../../procesos/cerrar.php">
                     <i class='bx bx-log-out icon'></i>
                     <span class="text nav-text">Cerrar sesión</span>
                 </a>

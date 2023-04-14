@@ -53,14 +53,14 @@
 
                 <li class="nav-link">
                     <a href="items.php">
-                        <i class='bx bx-heart icon'></i>
+                        <i class='bx bxs-grid bx-rotate-90 icon' ></i>
                         <span class="text nav-text">Productos</span>
                     </a>
                 </li>
 
                 <li class="nav-link">
                     <a href="ventas.php">
-                        <i class='bx bx-cart icon'></i>
+                        <i class='bx bx-wallet icon'></i>
                         <span class="text nav-text">Ventas</span>
                     </a>
                 </li>
@@ -72,7 +72,7 @@
 
             <li class="">
                 <a href="clientes.php">
-                    <i class='bx bx-help-circle icon'></i>
+                    <i class='bx bxs-group icon'></i>
                     <span class="text nav-text">Clientes</span>
                 </a>
             </li>

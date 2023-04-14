@@ -22,15 +22,14 @@ session_start();
     </header>
     <div class="menu-bar">
         <div class="menu">
-
-            <li class="search-box">
-                <i class='bx bx-search icon'></i>
-                <input type="text" placeholder="Search...">
-            </li>
+        <form id="search-form" class="search-box">
+            <i class='bx bx-search icon'></i>
+            <input id="search-input" type="text" placeholder="Search...">
+        </form>
 
             <ul class="menu-links">
                 <li class="nav-link">
-                    <a href="../user.php" id="inicio-link">
+                    <a href="user.php" id="inicio-link">
                         <i class='bx bx-home-alt icon'></i>
                         <span class="text nav-text">Inicio</span>
                     </a>
@@ -54,9 +53,6 @@ session_start();
                         </li>
                     </ul>
                 </div>
-
-
-
                 <li class="nav-link">
                     <a href="#" id="favoritos-link">
                         <i class='bx bx-heart icon'></i>

@@ -49,6 +49,9 @@ $pdo = null;
             <p class="book-author"><?php echo $item['version']; ?></p>
             <p class="book-price">S/ <?php echo $item['precio']; ?></p>
           </div>
+          <div class="btn-buy">
+              <a class="a-buy" href="carrito/AccionCarta.php?action=addToCart&coditem=<?php echo $item["coditem"]; ?>">comprar</a>
+          </div>
         </div>
       <?php endforeach; ?>
     </div>
@@ -76,12 +79,13 @@ $pdo = null;
         .then(response => response.json())
         .then(data => {
           contenido.innerHTML = `
-            <h2>${data.nombre}</h2>
+            <h4>${data.nombre}</h4>
             <img src="${data.foto}" alt="${data.nombre}">
-            <p>Año: ${data.version}</p>
-            <p>Editorial: ${data.editorial}</p>
-            <p>Género: ${data.precio}</p>
+            <p>Version: ${data.version}</p>
+            <p>Letra: ${data.letra}</p>
+            <p>N. Paginas: ${data.npag}</p>
             <p>Descripción: ${data.descripcion}</p>
+            <p><b> S/ ${data.precio}</B></p>
           `;
           itemDetails.classList.add('active');
         });
