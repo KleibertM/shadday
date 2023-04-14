@@ -44,6 +44,7 @@ session_start();
                                 <i class='bx bxs-chevron-down arrow'></i>
                             </a>
                             <ul class="sub-menu blank">
+                                <li><a href="categoria/all.php">Todos</a></li>
                                 <li><a href="categoria/damas.php">Damas</a></li>
                                 <li><a href="categoria/men.php">Caballeros</a></li>
                                 <li><a href="categoria/niños.php">Niños</a></li>

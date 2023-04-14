@@ -39,7 +39,7 @@ session_start();
                                 <i class='bx bxs-chevron-down arrow'></i>
                             </a>
                             <ul class="sub-menu blank">
-                                <li><a class="link_name" href="#">Libros</a></li>
+                                <li><a href="all.php">Todos</a></li>
                                 <li><a href="damas.php">Damas</a></li>
                                 <li><a href="men.php">Caballeros</a></li>
                                 <li><a href="niños.php">Niños</a></li>
