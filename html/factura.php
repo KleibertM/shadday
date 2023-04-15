@@ -14,7 +14,7 @@
 </head>
 <body><?php
 include '../procesos/conexion.php';
-$stmt = "SELECT * FROM detalleventa INNER JOIN item ON nombre = item.nombre inner join venta on idventa = venta.idventa LIMIT 5";
+$stmt = "SELECT * FROM detalleventa INNER JOIN item ON nombre = item.nombre inner join venta on idventa = venta.idventa ";
 $result = $conexion->query($stmt);
 
 if ($result->rowCount() > 0) {
