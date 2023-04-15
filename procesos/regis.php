@@ -35,9 +35,9 @@
                     if ($stmt->rowCount() > 0) {
                         echo '<div class="alert alert_error">El correo electrónico ya está registrado</div>';
                     } else {
-                        $stmt = $conexion->prepare("INSERT INTO cliente (nombre,	apellido,	telefono,	dni,	direccion,	edad,	sexo,	correo,	user,	clave) VALUES ($Nombre,	$Apellido, $Telefono,	$Dni,	$Direccion,	$Edad,	$Sexo,	$Correo,	$User,	$Clave)");
+                        $stmt = $conexion->prepare("INSERT INTO cliente (nombre,	apellido,	telefono,	dni,	direccion,	edad,	sexo,	correo,	user,	clave) VALUES (:nombre,	:apellido,	:telefono,	:dni,	:direccion,	:edad,	:sexo,	:correo,	:user,	:clave)");
 
-                        /*$stmt->bindParam(':nombre', $Nombre);
+                        $stmt->bindParam(':nombre', $Nombre);
                         $stmt->bindParam(':apellido', $Apellido);
                         $stmt->bindParam(':telefono', $Telefono);
                         $stmt->bindParam(':dni', $Dni);
@@ -47,7 +47,7 @@
                         $stmt->bindParam(':correo',$Correo);
                         $stmt->bindParam(':user', $User);
                         $stmt->bindParam(':clave', $Clave);      
-                                */
+                            
                         
                         if ($stmt->execute()) {
 

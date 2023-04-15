@@ -1,7 +1,5 @@
 <?php
 include '../procesos/conexion.php';
-session_start();
-
 $stmt = $conexion->prepare("SELECT * FROM cliente");
 $stmt->execute();
 $cont = 0;

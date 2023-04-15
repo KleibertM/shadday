@@ -67,21 +67,20 @@ $pdo = null;
     </div>
 
     <script>
-  const itemList = document.querySelectorAll('.box-book');
-  const itemDetails = document.querySelector('#libro-details');
-  const contenido = document.querySelector('.contenido');
-  const closeButton = document.querySelector('.cerrar');
-  const searchForm = document.querySelector('#search-form');
-  const searchInput = document.querySelector('#search-input');
+    const itemList = document.querySelectorAll('.box-book');
+    const itemDetails = document.querySelector('#libro-details');
+    const contenido = document.querySelector('.contenido');
+    const closeButton = document.querySelector('.cerrar');
+    const searchInput = document.querySelector('#search-input');
 
-  itemList.forEach((item) => {
-    item.addEventListener('click', (e) => {
-      const itemId = e.target.closest('.box-book').dataset.id;
-      fetch(`jestt.php?coditem=${itemId}`)
-        .then(response => response.json())
-        .then(data => {
-          contenido.innerHTML = `
-          <h4>${data.nombre}</h4>
+    itemList.forEach((item) => {
+      item.addEventListener('click', (e) => {
+        const itemId = e.target.closest('.box-book').dataset.id;
+        fetch(`jestt.php?coditem=${itemId}`)
+          .then(response => response.json())
+          .then(data => {
+            contenido.innerHTML = `
+            <h4>${data.nombre}</h4>
             <img src="${data.foto}" alt="${data.nombre}">
             <p><b>Version: </b>${data.version}</p>
             <p><b>Letra:</b> ${data.letra}</p>
@@ -89,35 +88,33 @@ $pdo = null;
             <p><b>Descripción:</b> ${data.descripcion}</p>
             <p>Precio:<b> S/ ${data.precio}</B></p>
           `;
-          itemDetails.classList.add('active');
-        });
+            itemDetails.classList.add('active');
+          });
+      });
     });
-  });
 
-  closeButton.addEventListener('click', () => {
-    itemDetails.classList.remove('active');
-  });
+    closeButton.addEventListener('click', () => {
+      itemDetails.classList.remove('active');
+    });
 
-  searchForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const searchTerm = searchInput.value.toLowerCase();
-  itemList.forEach((item) => {
-    const bookTitle = item.querySelector('.book-title').textContent.toLowerCase();
-    const bookAuthor = item.querySelector('.book-author').textContent.toLowerCase();
-    const bookPrice = item.querySelector('.book-price').textContent.toLowerCase();
-    if (bookTitle.includes(searchTerm) || bookAuthor.includes(searchTerm) || bookPrice.includes(searchTerm)) {
-      item.style.display = 'block';
-    } else {
-      item.style.display = 'none';
-    }
-  });
-});
+    searchInput.addEventListener('input', () => {
+      const searchTerm = searchInput.value.toLowerCase();
+      itemList.forEach((item) => {
+        const bookTitle = item.querySelector('.book-title').textContent.toLowerCase();
+        const bookAuthor = item.querySelector('.book-author').textContent.toLowerCase();
+        const bookPrice = item.querySelector('.book-price').textContent.toLowerCase();
+        if (bookTitle.includes(searchTerm) || bookAuthor.includes(searchTerm) || bookPrice.includes(searchTerm)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  </script>
 
-</script>
-
-    <script>
-        fetch(`jestt.php?coditem=${item['coditem']}`)
-    </script>
+  <script>
+    fetch(`jestt.php?coditem=${item['coditem']}`)
+  </script>
 </body>
 
 </html>
