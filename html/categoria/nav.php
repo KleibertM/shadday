@@ -3,6 +3,8 @@
 session_start();
 
 ?>
+
+<script src="//code.tidio.co/ibctjonvw31zzxgq0rg1zcekeytmouyu.js" async></script>
 <nav class="sidebar close">
     <header>
         <div class="image-text">

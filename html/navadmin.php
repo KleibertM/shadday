@@ -62,13 +62,25 @@ session_start();
                         <span class="text nav-text">Productos</span>
                     </a>
                 </li>
-
                 <li class="nav-link">
                     <a href="ventas.php">
                         <i class='bx bx-wallet icon'></i>
                         <span class="text nav-text">Ventas</span>
                     </a>
                 </li>
+                <li class="nav-link">
+                    <a href="https://www.tidio.com/panel/visitors" target="_blank">
+                        <i class='bx bx-chat icon'  ></i>
+                        <span class="text nav-text">Mensajes</span>
+                    </a>
+                </li>
+                <!--<li class="nav-link">
+                    <a href="ventas.php">
+                        <i class='bx bx-wallet icon'></i>
+                        <span class="text nav-text">Ventas</span>
+                    </a>
+                </li>-->
+                
 
             </ul>
         </div>

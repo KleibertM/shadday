@@ -10,9 +10,8 @@ $cart = new Cart;
 if ($cart->total_items() <= 0) {
     echo '';
 }
-
 // set customer ID in session
-$_SESSION['sessCustomerID'] = 1;
+$_SESSION['sessCustomerID'] = 4;
 
 // get customer details by session customer ID
 $query = $db->query("SELECT * FROM cliente WHERE codcliente = " . $_SESSION['sessCustomerID']);
@@ -120,7 +119,7 @@ $custRow = $query->fetch_assoc();
                     <a href="AccionCarta.php?action=placeOrder" class="btn btn-success orderBtn">Realizar pedido <i class="glyphicon glyphicon-menu-right"></i></a>
                 </div>
             </div>
-            <div 
+            <div >
         </div>
         <!--Panek cierra-->
     </div>

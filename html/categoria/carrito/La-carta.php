@@ -172,6 +172,8 @@ class Cart {
 		$this->save_cart();
 		return TRUE;
 	 }
+
+
      
     /**
 	 * Destroy the cart: Empties the cart and destroy the session
