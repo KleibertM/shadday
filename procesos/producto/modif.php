@@ -21,7 +21,16 @@ $cont = 0;
 <div class="contenedor">
     <form action="modifitem.php" name="modificar" method="GET">
         <h2 class="title">ID de Producto</h2>
-        <input type="number" name="coditem" required=""><br><br>
+        <select name="coditem" required="">
+            <?php
+            // Realizar la consulta para obtener los códigos de los productos
+            $stmt = $conexion->prepare("SELECT coditem, nombre FROM item");
+            $stmt->execute();
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                echo "<option value='" . $row['coditem'] . $row['nombre'] . "'> " . $row['coditem'] . " " . $row['nombre'] . "</option>";
+            }
+            ?>
+        </select><br><br>
         
         <h2>Datos a Modiicar</h2>
         
@@ -29,7 +38,7 @@ $cont = 0;
 
         <input type="text" id="version" name="version" placeholder="Version" ><br>
 
-        <input type="text" id="categoria" name="categoria" placeholder="Categoria" ><br>
+        <input type="text" id="cat" name="cat" placeholder="Categoria" ><br>
 
         <input type="text" id="editorial" name="editorial" placeholder="Editorial" ><br>
 

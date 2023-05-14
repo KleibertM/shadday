@@ -40,8 +40,8 @@ $cont = 0;
             <td class="table__header">Fecha</td>
             <td class="table__header">Stock</td>
             <td class="table__header">Precio</td>
-            <td></td>
-            <td></td>
+            <!--  <td></td>
+            <td></td>-->
         </tr>
         </thead>
         <?php while($row = $stmt->fetch(PDO::FETCH_ASSOC)): ?>
@@ -50,15 +50,16 @@ $cont = 0;
             <td class="table__item"><?php echo $row['coditem'];?></td>
             <td class="table__item"><?php echo $row['nombre'];?></td>
             <td class="table__item"><?php echo $row['version'];?></td>
-            <td class="table__item"><?php echo $row['categoria'];?></td>
+            <td class="table__item"><?php echo $row['cat'];?></td>
             <td class="table__item"><?php echo $row['editorial'];?></td>
             <td class="table__item"><?php echo $row['letra'];?></td>
             <td class="table__item"><?php echo $row['fecha'];?></td>
             <td class="table__item"><?php echo $row['stock'];?></td>
-            <td class="table__item"><?php echo $row['precio'];?></td>
+            <td class="table__item"  style="color: green; font-weight: bold; ">S/ <?php echo $row['precio'];?></td>
             
-            
-            <td ><a href="../procesos/producto/deletitem.php?id=<?php echo $row['coditem'];?>">eliminar</a></td>
+            <!-- <td><a href="../procesos/producto/delete.php?id=<?php echo $row['coditem'];?>">Desactivar</a></td>
+            <td><a href="../procesos/producto/activateitem.php?id=<?php echo $row['coditem'];?>">Activar</a></td>-->
+
         </tr>
         </tbody>
         <?php endwhile  ?>

@@ -20,34 +20,31 @@ $cont = 0;
 </head>
 <body>
 <?php include 'navadmin.php'; ?>
-  <div  class="main-container">
-    <div class="tite-table" > 
-      <h1>Ventas Totales</h1>
-    </div>
-    <div class="edit">
-        <a href="detVenta.php">Detalles de venta</a>
-     </div>
-  <table class="styled-table" >
-   <thead>
-    <tr>
-        <td class="table__header">ID Venta</td>
-        <td class="table__header">ID Cliente</td>
+<div class="main-container">
+  <div class="title-table">
+    <h1>Ventas Totales</h1>
+  </div>
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <td class="table__header">Número de Orden</td>
         <td class="table__header">Fecha y Hora</td>
         <td class="table__header">Total</td>
+        <td class="table__header">Detalles</td>
       </tr>
-   </thead>
-    <?php while($row = $stmt->fetch(PDO::FETCH_ASSOC)): ?>
+    </thead>
     <tbody>
-      <tr>
-        <td class="table__item"><?php echo $row['idventa']; ?></td>
-        <td class="table__item"><?php echo $row['idcliente']; ?></td>
-        <td class="table__item"><?php echo $row['fecha_hora']; ?></td>
-        <td class="table__item"><?php echo $row['total']; ?></td>
-      </tr>
+      <?php while($row = $stmt->fetch(PDO::FETCH_ASSOC)): ?>
+        <tr>
+          <td class="table__item"><?php echo $row['idventa']; ?></td>
+          <td class="table__item"><?php echo $row['fecha_hora']; ?></td>
+          <td class="table__item" style="color: green; font-weight: bold; ">S/ <?php echo $row['total']; ?></td>
+          <td class="table__item"><a href="detVenta.php?idventa=<?php echo $row['idventa']; ?>">Detalles de venta</a></td>
+        </tr>
+      <?php endwhile; ?>
     </tbody>
-    <?php endwhile; ?>
-  </table>  
-  </div>
+  </table>
+</div>
 
     <!----===== JS ===== -->
     <script src="../js/navbar.js"></script>

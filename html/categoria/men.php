@@ -1,7 +1,7 @@
 <?php
 require '../../procesos/conexion.php';
 
-$sql = "SELECT * FROM item WHERE categoria = 9002";
+$sql = "SELECT * FROM item WHERE cat = 'CABALLEROS' ";
 $result = $conexion->query($sql);
 
 if ($result->rowCount() > 0) {
@@ -36,29 +36,43 @@ $pdo = null;
     <?php include 'nav.php'; ?>
     <script src="../../js/navbar.js"></script>
     <section class="home">
-        <nav class="main-nav">
-            <h1 style="text-align: center;">Shaddai</h1>
-        </nav>
-        <div class="ctlg">
-            <div class="titulo-cat">
-                <h1 style="text-align: center;">Diseños de Caballeros</h1>
+  <div class="ctlg">
+    <div class="titulo">
+      <h1 style="text-align: center;">Conocimientos de Dios</h1>
+    </div>
+    <div class="container">
+      <?php foreach ($items as $item): ?>
+        <div class="box-book" data-id="<?php echo $item['coditem']; ?>">
+          <img src="<?php echo $item['foto']; ?>" alt="<?php echo $item['nombre']; ?>">
+          <div class="book-info">
+            <h3 class="book-title"><?php echo $item['nombre']; ?></h3>
+            <p class="book-author"><?php echo $item['version']; ?></p>
+            <p class="book-author"><?php echo $item['cat']; ?></p>
+            <p class="book-price">S/ <?php echo $item['precio']; ?></p>
+          </div>
+          <form action="carrito/AccionCarta.php?action=addToCart" method="POST">
+            <input type="hidden" name="coditem" value="<?php echo $item['coditem']; ?>">
+            <input type="hidden" name="nombre" value="<?php echo $item['nombre']; ?>">
+            <input type="hidden" name="precio" value="<?php echo $item['precio']; ?>">
+            <select name="cantidad">
+              <?php for ($cont = 1; $cont <= 100; $cont++): ?>
+                <option value="<?php echo $cont; ?>"><?php echo $cont; ?></option>
+              <?php endfor; ?>
+            </select>
+            <div class="btn-buy" style=" margin: 10px; " >
+              <button type="submit" id="a-buy" style="background-color: transparent ;
+              width: 100%; 
+              color: white; 
+              border-radius: 10px;
+              border: none; 
+              text-transform: uppercase; "> comprar </button>
             </div>
-            <div class="container">
-                <?php foreach ($items as $item) : ?>
-                    <div class="box-book" data-id="<?php echo $item['coditem']; ?>">
-                        <img src='<?php echo $item['foto']; ?>' alt="<?php echo $item['nombre'];  ?>">
-                        <div class="book-info">
-                            <h3 class="book-title"><?php echo $item['nombre']; ?></h3>
-                            <p class="book-author"><?php echo $item['version']; ?></p>
-                            <p class="book-price">S/ <?php echo $item['precio']; ?></p>
-                        </div>
-                        <div class="btn-buy">
-                            <a class="a-buy" href="carrito/AccionCarta.php?action=addToCart&coditem=<?php echo $item["coditem"]; ?>">comprar</a>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
-            </div>
-    </section>
+          </form>
+        </div>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
     <div id="libro-details">
         <i class='bx bx-x cerrar toggle'></i>
         <div class="contenido"></div>

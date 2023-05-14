@@ -30,6 +30,7 @@ if (!isset($_REQUEST['coditem'])) {
 
         <ul class="nav nav-pills">
           <li role="presentation" class="active"><a href="Pagos.php">Volver</a></li>
+          <li role="presentation" class="active Pagar"><a href="procesar_pago.php">Pagar Ahora</a></li>
         </ul>
       </div>
 
@@ -38,7 +39,6 @@ if (!isset($_REQUEST['coditem'])) {
         <h1>Estado de tu Requerimiento</h1>
         <p>La Orden se ha enviado exitósamente. El ID de tu pedido es <?php echo $_GET['coditem']; ?></p>
       </div>
-      
     </div>
     <!--Panek cierra-->
   </div>

@@ -6,7 +6,7 @@ if (!empty($_GET['actualizar'])) {
     $coditem = $_GET['coditem'];
     $nombre = isset($_GET['nombre']) ? $_GET['nombre'] : '';
     $version = isset($_GET['version']) ? $_GET['version'] : '';
-    $categoria = isset($_GET['categoria']) ? $_GET['categoria'] : '';
+    $categoria = isset($_GET['cat']) ? $_GET['cat'] : '';
     $editorial = isset($_GET['editorial']) ? $_GET['editorial'] : '';
     $fecha = isset($_GET['fecha']) ? $_GET['fecha'] : '';
     $stock = isset($_GET['stock']) ? $_GET['stock'] : '';
@@ -26,7 +26,7 @@ if (!empty($_GET['actualizar'])) {
         $sql .= "version= :version,";
     }
     if (!empty($categoria)) {
-        $sql .= "categoria=:categoria,";
+        $sql .= "cat=:cat,";
     }
     if (!empty($editorial)) {
         $sql .= "editorial=:editorial,";
@@ -74,7 +74,7 @@ if (!empty($_GET['actualizar'])) {
         $sql->bindParam(":version", $version);
     }
     if (!empty($categoria)) {
-        $sql->bindParam(":categoria", $categoria);
+        $sql->bindParam(":cat", $categoria);
     }
     if (!empty($editorial)) {
         $sql->bindParam(":editorial", $editorial);

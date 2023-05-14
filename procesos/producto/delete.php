@@ -1,8 +1,8 @@
 <?php
 require_once "../conexion.php";
 
-if (!empty($_GET['eliminar'])) {
-    $coditem = $_REQUEST['coditem'];
+if(isset($_GET['id'])) {
+    $coditem = $_GET['id'];
 
 $eliminar = $conexion->prepare("DELETE FROM item WHERE coditem = :coditem");
 $eliminar->bindParam(':coditem', $coditem);

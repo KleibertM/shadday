@@ -11,7 +11,14 @@ if ($cart->total_items() <= 0) {
     echo '';
 }
 // set customer ID in session
-$_SESSION['sessCustomerID'] = 4;
+if (isset($_SESSION['cliente'])) {
+    // get customer details from session
+    $custRow = $_SESSION['cliente'];
+    $_SESSION['sessCustomerID'] = $custRow->codcliente;
+} else {
+    // set customer ID in session to default value
+    $_SESSION['sessCustomerID'] = 1;
+}
 
 // get customer details by session customer ID
 $query = $db->query("SELECT * FROM cliente WHERE codcliente = " . $_SESSION['sessCustomerID']);
@@ -117,6 +124,7 @@ $custRow = $query->fetch_assoc();
                 <div class="footBtn">
                     <a href="../all.php" class="btn btn-warning"><i class="glyphicon glyphicon-menu-left"></i> Continue Comprando</a>
                     <a href="AccionCarta.php?action=placeOrder" class="btn btn-success orderBtn">Realizar pedido <i class="glyphicon glyphicon-menu-right"></i></a>
+                    <a href="procesar_pago.php" ><i class='bx bx-credit-card'></i>Pagar</a>
                 </div>
             </div>
             <div >
