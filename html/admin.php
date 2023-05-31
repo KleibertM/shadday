@@ -32,9 +32,7 @@ if (!isset($_SESSION['user'])) {
               <h1>Venta de Biblias</h1>
               <h2>Edicion Reina Valera<h2>
               <p>Nuevo sitio web para todas las edades, <br> echale un ojo nuestro catalogo y compra </p>
-              <button class="main-btn" type="button"> 
-                Ver
-              </button>
+              <button class="main-btn" type="button">Ver</button>
             </header>
             <div class="prymary-img">
               <img class="emp main-img" src="../img/BIBLI.png" alt="Santa Biblia">

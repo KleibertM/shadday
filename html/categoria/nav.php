@@ -14,7 +14,7 @@ session_start();
             </span>
             <div class="text logo-text">
                 <span class="name">Shadday</span>
-                <span class="profession">Hola <?php echo $_SESSION['user']; ?></span>
+                <span class="profession">Hola <?php echo $_SESSION['user'] ?? "Invitado"; ?></span>
             </div>
         </div>
         <i class='bx bx-chevron-right toggle'></i>
