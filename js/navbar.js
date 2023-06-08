@@ -12,7 +12,7 @@ const savedMode = localStorage.getItem('mode');
 // Si hay un modo almacenado, establecerlo en el body
 if (savedMode) {
   body.classList.add(savedMode);
-  
+
   if (savedMode === 'dark') {
     modeText.innerText = 'Modo claro';
   } else {
@@ -26,15 +26,15 @@ toggle.addEventListener('click', () => {
 
 modeSwitch.addEventListener('click', () => {
   body.classList.toggle('dark');
-  
+
   if (body.classList.contains('dark')) {
     modeText.innerText = 'Modo claro';
-    
+
     // Guardar el modo en localStorage
     localStorage.setItem('mode', 'dark');
   } else {
     modeText.innerText = 'Modo oscuro';
-    
+
     // Guardar el modo en localStorage
     localStorage.setItem('mode', 'light');
   }
@@ -44,16 +44,16 @@ modeSwitch.addEventListener('click', () => {
 
 /* sedplazar el menu */
 const arrow = document.querySelector('.arrow');
-        const subMenu = document.querySelector('.sub-menu');
+const subMenu = document.querySelector('.sub-menu');
 
-        arrow.addEventListener('click', function () {
-            arrow.classList.toggle('active');
-            subMenu.classList.toggle('active');
-        });
+arrow.addEventListener('click', function () {
+  arrow.classList.toggle('active');
+  subMenu.classList.toggle('active');
+});
 
-        document.addEventListener('click', function (e) {
-            if (!e.target.closest('.nav-link')) {
-                arrow.classList.remove('active');
-                subMenu.classList.remove('active');
-            }
-        });
+document.addEventListener('click', function (e) {
+  if (!e.target.closest('.nav-link')) {
+    arrow.classList.remove('active');
+    subMenu.classList.remove('active');
+  }
+});
